@@ -1,9 +1,50 @@
+import { useLayoutEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../lib/api/client';
 import { useAsync } from '../lib/use-async';
 import { ErrorState } from '../components/error-state';
 import { RefreshIcon } from '../components/icons';
 import { Skeleton } from '../components/skeleton';
+
+function QuoteLine({ text }: { text: string }) {
+  const line = useRef<HTMLParagraphElement>(null);
+  const [compact, setCompact] = useState(false);
+  const [smaller, setSmaller] = useState(0);
+  const [, setFontEpoch] = useState(0);
+
+  useLayoutEffect(() => {
+    const node = line.current;
+    if (!node) return;
+    const style = window.getComputedStyle(node);
+    const lineHeight = Number.parseFloat(style.lineHeight) || 1.95 * Number.parseFloat(style.fontSize);
+    const lines = Math.round(node.scrollHeight / lineHeight);
+    if (!compact && lines > 2) {
+      setCompact(true);
+    } else if (compact && lines > 4 && smaller < 6) {
+      setSmaller((value) => value + 1);
+    }
+  }, [text, compact, smaller]);
+
+  useLayoutEffect(() => {
+    let live = true;
+    void document.fonts.ready.then(() => { if (live) setFontEpoch((epoch) => epoch + 1); });
+    return () => { live = false; };
+  }, []);
+
+  const base = 'clamp(22px, 2.4vw, 34px)';
+  const fontSize = compact ? `calc(24px - ${smaller}px)` : base;
+
+  return (
+    <p
+      ref={line}
+      className="m-0 whitespace-pre-line text-center font-poem text-ink"
+      style={{ paddingBlock: '1.1em', lineHeight: 1.95, overflow: 'visible', fontSize }}
+      dir="rtl"
+    >
+      {text}
+    </p>
+  );
+}
 
 export function HomeQuote() {
   const { data: quote, error, loading, reload } = useAsync(() => api.randomQuote(), []);
@@ -34,9 +75,7 @@ export function HomeQuote() {
       ) : (
         <div className="flex flex-1 flex-col justify-between p-4">
           <blockquote className="m-0">
-            <p className="whitespace-pre-line font-calligraphic text-[clamp(20px,2vw,24px)] leading-[1.9] text-ink">
-              {quote.text}
-            </p>
+            <QuoteLine key={quote.id} text={quote.text} />
             <footer className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 font-ui text-[12px] text-ink-3">
               <span>{quote.author.name}</span>
               {quote.topic && <span className="text-ink-3">· {quote.topic}</span>}

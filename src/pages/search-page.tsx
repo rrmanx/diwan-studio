@@ -1,5 +1,6 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import { api, type SearchType } from '../lib/api/client';
+import { formatCount } from '../lib/format';
 import { useAsync } from '../lib/use-async';
 import { useTopbar } from '../components/app-shell';
 import { EmptyState } from '../components/empty-state';
@@ -58,7 +59,7 @@ export function SearchPage() {
         <ErrorState message={error ?? undefined} onRetry={reload} />
       ) : (
         <>
-          <FilterToolbar count={`${resultCount} نتيجة عن «${query}»`} label="نوع النتائج">
+          <FilterToolbar count={`${formatCount(resultCount)} نتيجة عن «${query}»`} label="نوع النتائج">
             {TYPES.map((item) => (
               <button
                 key={item.value}

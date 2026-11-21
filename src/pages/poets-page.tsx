@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../lib/api/client';
+import { formatCount } from '../lib/format';
 import { useAsync } from '../lib/use-async';
 import { useTopbar } from '../components/app-shell';
 import { Button } from '../components/button';
@@ -23,7 +24,7 @@ export function PoetsPage() {
 
   return (
     <div>
-      <FilterToolbar count={`${shown.length} شاعر`} label="تصفية الشعراء">
+      <FilterToolbar count={`${formatCount(shown.length)} شاعر`} label="تصفية الشعراء">
         <FilterSelect id="filter-era" label="تصفية حسب الفترة" value={era ?? ''} onChange={(value) => setEra(value || null)}>
           <option value="">كل الفترات</option>
           {(eras.data ?? []).map((item) => (
@@ -63,7 +64,7 @@ export function PoetsPage() {
               </span>
               <span className="flex shrink-0 items-center gap-3">
                 {poet.poem_count !== undefined && (
-                  <span className="font-mono text-[11px] text-ink-3">{poet.poem_count}</span>
+                  <span className="font-mono text-[11px] text-ink-3">{formatCount(poet.poem_count)}</span>
                 )}
                 <ChevronLeftIcon
                   size={14}

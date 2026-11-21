@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { api } from '../lib/api/client';
+import { formatCount } from '../lib/format';
 import { useAsync } from '../lib/use-async';
 import { useTopbar } from '../components/app-shell';
 import { EmptyState } from '../components/empty-state';
@@ -41,7 +42,7 @@ export function PoetPage() {
       <div className="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-rule pb-3">
         <span className="font-ui text-[12px] text-ink-3">{poet.data.era.name}</span>
         <span className="font-mono text-[11px] text-ink-3">
-          {poems.data.meta.total} قصيدة
+          {formatCount(poems.data.meta.total)} قصيدة
         </span>
       </div>
 

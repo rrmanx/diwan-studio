@@ -13,9 +13,10 @@ export function QuoteCard({ quote, calligraphic = false }: QuoteCardProps) {
         <p
           className={`m-0 whitespace-pre-line text-ink ${
             calligraphic
-              ? 'font-calligraphic text-[22px] leading-[1.9]'
+              ? 'text-center font-poem text-[clamp(22px,2.4vw,34px)]'
               : 'font-poem text-[18px] leading-[1.9]'
           }`}
+          style={calligraphic ? { paddingBlock: '1.1em', lineHeight: 1.95, overflow: 'visible' } : undefined}
           dir="rtl"
         >
           {quote.text}

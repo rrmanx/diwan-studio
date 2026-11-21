@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { api } from '../lib/api/client';
+import { formatCount } from '../lib/format';
 import { useAsync } from '../lib/use-async';
 import { useTopbar } from '../components/app-shell';
 import { Button } from '../components/button';
@@ -50,7 +51,7 @@ export function PoemsPage() {
 
   return (
     <div>
-      <FilterToolbar count={total !== undefined ? `${total} قصيدة` : '—'}>
+      <FilterToolbar count={total !== undefined ? `${formatCount(total)} قصيدة` : '—'}>
         <FilterSelect id="filter-era" label="تصفية حسب الفترة" value={era} onChange={(value) => setFilter('era', value)}>
           <option value="">الفترة</option>
           {(vocab.data?.eras ?? []).map((item) => (

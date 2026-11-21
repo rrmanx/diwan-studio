@@ -1,3 +1,4 @@
+import { formatCount } from '../lib/format';
 import { Button } from './button';
 
 interface PaginationProps {
@@ -18,7 +19,7 @@ export function Pagination({ page, lastPage, onChange }: PaginationProps) {
         السابق
       </Button>
       <span className="font-ui text-[11px] text-ink-3">
-        صفحة {page} من {lastPage}
+        صفحة {formatCount(page)} من {formatCount(lastPage)}
       </span>
       <Button
         variant="secondary"

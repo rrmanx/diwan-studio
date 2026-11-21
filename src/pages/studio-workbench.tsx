@@ -5,6 +5,7 @@ import { Chip } from '../components/chip';
 import { ErrorState } from '../components/error-state';
 import { Skeleton } from '../components/skeleton';
 import { api } from '../lib/api/client';
+import { formatCount } from '../lib/format';
 import type { Poem, Quote } from '../lib/types';
 import { errorMessage, useAsync } from '../lib/use-async';
 import {
@@ -21,7 +22,7 @@ import {
 } from '../lib/studio/defaults';
 import { exportPng } from '../lib/studio/export';
 import { cssFamily, facesForComposition } from '../lib/studio/fonts';
-import { linesFromText, linesFromVerses } from '../lib/studio/lines';
+import { linesFromText, linesFromVerses, pairHemistichs } from '../lib/studio/lines';
 import { renderComposition } from '../lib/studio/render';
 import { SIZE_IDS, SIZES } from '../lib/studio/sizes';
 import type {
@@ -36,6 +37,14 @@ import type {
 const SESSION_KEY = 'diwan:studio:current';
 const DESIGNS_KEY = 'diwan:designs';
 const MAX_VERSES = 6;
+
+/** Titles often drop tashkeel from the sadr; compare the underlying letters. */
+const bareArabic = (value: string): string =>
+  value
+    .replace(/[\u064B-\u065F\u0670\u0640]/g, '')
+    .replace(/[أإآ]/g, 'ا')
+    .replace(/ى/g, 'ي')
+    .trim();
 
 type SourceMode = 'diwan' | 'user';
 
@@ -443,25 +452,31 @@ export function StudioWorkbench({ poemId, quoteId }: { poemId?: string; quoteId?
     });
   }, [info.rows]);
 
-  const selectedRows = useMemo(
-    () =>
-      composition.verseIndexes
-        .filter((index) => Number.isInteger(index) && index >= 0 && index < info.rows.length)
-        .slice(0, MAX_VERSES)
-        .map((index) => info.rows[index]),
-    [composition.verseIndexes, info.rows],
-  );
+  const selectedRows = useMemo(() => {
+    const rows = composition.verseIndexes
+      .filter((index) => Number.isInteger(index) && index >= 0 && index < info.rows.length)
+      .slice(0, MAX_VERSES)
+      .map((index) => info.rows[index]);
+    return data?.kind === 'poem' && data.poem.display_layout === 'hemistichs'
+      ? pairHemistichs(rows)
+      : rows;
+  }, [composition.verseIndexes, info.rows, data]);
+
+  // The poem title usually repeats the first sadr; keep it out of the artboard then.
+  const artboardTitle = selectedRows[0] && bareArabic(selectedRows[0][0]) === bareArabic(info.title)
+    ? ''
+    : info.title;
 
   const svg = useMemo(
     () =>
       renderComposition({
         composition,
         lines: selectedRows,
-        title: info.title,
+        title: artboardTitle,
         poet: info.poet,
         source: info.source,
       }),
-    [composition, selectedRows, info.title, info.poet, info.source, fontEpoch],
+    [composition, selectedRows, artboardTitle, info.poet, info.source, fontEpoch],
   );
 
   const rightsBlocked = info.rights !== 'public-domain' && info.rights !== 'user';
@@ -739,7 +754,7 @@ export function StudioWorkbench({ poemId, quoteId }: { poemId?: string; quoteId?
                     مسح
                   </button>
                   <span className="text-ink-3">
-                    {composition.verseIndexes.length}/{MAX_VERSES}
+                    {formatCount(composition.verseIndexes.length)}/{formatCount(MAX_VERSES)}
                   </span>
                 </div>
                 {composition.verseIndexes.length >= MAX_VERSES && info.rows.length > MAX_VERSES && (
