@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-paper-sunk: var(--paper-sunk);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-rule: var(--rule);
+  --color-rule-strong: var(--rule-strong);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-gold: var(--gold);
+  --font-poem: "Amiri", serif;
+  --font-display: "Reem Kufi", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Readex Pro", system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--paper-raised);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+.hairline {
+  border: 1px solid var(--rule);
+}
+
+.font-poem {
+  font-family: "Amiri", serif;
+}
+
+.font-display {
+  font-family: "Reem Kufi", sans-serif;
+}
+
+.font-mono {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.container-page {
+  max-width: 1240px;
+  padding-inline: 24px;
+  margin-inline: auto;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.rule {
+  height: 1px;
+  background: var(--rule);
+}
+
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}

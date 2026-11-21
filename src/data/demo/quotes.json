@@ -1,0 +1,206 @@
+[
+  {
+    "id": 1,
+    "title": "أنا الذي نظر الأعمى",
+    "text": "أَنا الَّذي نَظَرَ الأَعمى إِلى أَدَبي\nوَأَسمَعَتْ كَلِماتي مَن بِهِ صَمَمُ",
+    "topic": "الفخر",
+    "author": {
+      "id": null,
+      "name": "أبو الطيب المتنبي"
+    },
+    "attribution": {
+      "required": false,
+      "text": "نصّ تراثي من الملك العام — بيانات معاينة في ستوديو الديوان",
+      "url": "https://developers.aldiwan.net"
+    },
+    "rights": "public-domain",
+    "source": "demo"
+  },
+  {
+    "id": 2,
+    "title": "وما نيل المطالب",
+    "text": "وَما نَيلُ المَطالِبِ بِالتَّمَنّي\nوَلَكِنْ تُؤخَذُ الدُّنيا غِلابا",
+    "topic": "الطموح",
+    "author": {
+      "id": null,
+      "name": "أبو الطيب المتنبي"
+    },
+    "attribution": {
+      "required": false,
+      "text": "نصّ تراثي من الملك العام — بيانات معاينة في ستوديو الديوان",
+      "url": "https://developers.aldiwan.net"
+    },
+    "rights": "public-domain",
+    "source": "demo"
+  },
+  {
+    "id": 3,
+    "title": "على قدر أهل العزم",
+    "text": "عَلى قَدْرِ أَهْلِ العَزْمِ تَأْتي العَزائِمُ\nوَتَأْتي عَلى قَدْرِ الكِرامِ المَكارِمُ",
+    "topic": "العزيمة",
+    "author": {
+      "id": null,
+      "name": "أبو الطيب المتنبي"
+    },
+    "attribution": {
+      "required": false,
+      "text": "نصّ تراثي من الملك العام — بيانات معاينة في ستوديو الديوان",
+      "url": "https://developers.aldiwan.net"
+    },
+    "rights": "public-domain",
+    "source": "demo"
+  },
+  {
+    "id": 4,
+    "title": "السيف أصدق أنباء",
+    "text": "السَّيفُ أَصدَقُ أَنباءً مِنَ الكُتُبِ\nفي حَدِّهِ الحَدُّ بَينَ الجِدِّ وَاللَّعِبِ",
+    "topic": "الحكمة",
+    "author": {
+      "id": null,
+      "name": "أبو تمام"
+    },
+    "attribution": {
+      "required": false,
+      "text": "نصّ تراثي من الملك العام — بيانات معاينة في ستوديو الديوان",
+      "url": "https://developers.aldiwan.net"
+    },
+    "rights": "public-domain",
+    "source": "demo"
+  },
+  {
+    "id": 5,
+    "title": "دع الأيام",
+    "text": "دَعِ الأَيّامَ تَفعَلْ ما تَشاءُ\nوَطِبْ نَفسًا إِذا حَكَمَ القَضاءُ",
+    "topic": "الرضا",
+    "author": {
+      "id": null,
+      "name": "الإمام الشافعي"
+    },
+    "attribution": {
+      "required": false,
+      "text": "نصّ تراثي من الملك العام — بيانات معاينة في ستوديو الديوان",
+      "url": "https://developers.aldiwan.net"
+    },
+    "rights": "public-domain",
+    "source": "demo"
+  },
+  {
+    "id": 6,
+    "title": "قفا نبك",
+    "text": "قِفا نَبْكِ مِن ذِكرى حَبيبٍ ومَنزِلِ\nبِسِقْطِ اللِّوى بَينَ الدَّخولِ فَحَوْمَلِ",
+    "topic": "الغزل",
+    "author": {
+      "id": null,
+      "name": "امرؤ القيس"
+    },
+    "attribution": {
+      "required": false,
+      "text": "نصّ تراثي من الملك العام — بيانات معاينة في ستوديو الديوان",
+      "url": "https://developers.aldiwan.net"
+    },
+    "rights": "public-domain",
+    "source": "demo"
+  },
+  {
+    "id": 7,
+    "title": "هل غادر الشعراء",
+    "text": "هَلْ غادَرَ الشُّعَراءُ مِن مُتَرَدَّمِ\nأَمْ هَلْ عَرَفْتَ الدّارَ بَعدَ تَوَهُّمِ",
+    "topic": "الوقوف على الأطلال",
+    "author": {
+      "id": null,
+      "name": "عنترة بن شداد"
+    },
+    "attribution": {
+      "required": false,
+      "text": "نصّ تراثي من الملك العام — بيانات معاينة في ستوديو الديوان",
+      "url": "https://developers.aldiwan.net"
+    },
+    "rights": "public-domain",
+    "source": "demo"
+  },
+  {
+    "id": 8,
+    "title": "قم للمعلم",
+    "text": "قُمْ لِلمُعَلِّمِ وَفِّهِ التَّبجيلا\nكادَ المُعَلِّمُ أَنْ يَكونَ رَسولا",
+    "topic": "العلم",
+    "author": {
+      "id": null,
+      "name": "أحمد شوقي"
+    },
+    "attribution": {
+      "required": false,
+      "text": "نصّ تراثي من الملك العام — بيانات معاينة في ستوديو الديوان",
+      "url": "https://developers.aldiwan.net"
+    },
+    "rights": "public-domain",
+    "source": "demo"
+  },
+  {
+    "id": 9,
+    "title": "أضحى التنائي",
+    "text": "أَضحى التَّنائي بَديلًا مِن تَدانينا\nوَنابَ عَن طيبِ لُقْيانا تَجافينا",
+    "topic": "الشوق",
+    "author": {
+      "id": null,
+      "name": "ابن زيدون"
+    },
+    "attribution": {
+      "required": false,
+      "text": "نصّ تراثي من الملك العام — بيانات معاينة في ستوديو الديوان",
+      "url": "https://developers.aldiwan.net"
+    },
+    "rights": "public-domain",
+    "source": "demo"
+  },
+  {
+    "id": 10,
+    "title": "دع عنك لومي",
+    "text": "دَعْ عَنْكَ لَوْمي فَإِنَّ اللَّوْمَ إِغْراءُ\nوَداوني بِالَّتي كانَتْ هِيَ الدَّاءُ",
+    "topic": "الغزل",
+    "author": {
+      "id": null,
+      "name": "أبو نواس"
+    },
+    "attribution": {
+      "required": false,
+      "text": "نصّ تراثي من الملك العام — بيانات معاينة في ستوديو الديوان",
+      "url": "https://developers.aldiwan.net"
+    },
+    "rights": "public-domain",
+    "source": "demo"
+  },
+  {
+    "id": 11,
+    "title": "أمن أم أوفى",
+    "text": "أَمِنْ أُمِّ أَوْفى دِمْنَةٌ لَمْ تَكَلَّمِ\nبِحَوْمانَةِ الدُّرّاجِ فَالمُتَثَلَّمِ",
+    "topic": "الوقوف على الأطلال",
+    "author": {
+      "id": null,
+      "name": "زهير بن أبي سلمى"
+    },
+    "attribution": {
+      "required": false,
+      "text": "نصّ تراثي من الملك العام — بيانات معاينة في ستوديو الديوان",
+      "url": "https://developers.aldiwan.net"
+    },
+    "rights": "public-domain",
+    "source": "demo"
+  },
+  {
+    "id": 12,
+    "title": "غير مجد في ملتي",
+    "text": "غَيرُ مُجدٍ في مِلَّتي وَاِعتِقادي\nنَوحُ باكٍ وَلا تَرَنُّمُ شادِ",
+    "topic": "التأمل",
+    "author": {
+      "id": null,
+      "name": "أبو العلاء المعري"
+    },
+    "attribution": {
+      "required": false,
+      "text": "نصّ تراثي من الملك العام — بيانات معاينة في ستوديو الديوان",
+      "url": "https://developers.aldiwan.net"
+    },
+    "rights": "public-domain",
+    "source": "demo"
+  }
+]
