@@ -1,0 +1,7 @@
+name = "diwan-aldiwan-proxy"
+main = "src/index.ts"
+compatibility_date = "2026-01-01"
+
+[vars]
+UPSTREAM = "https://api.aldiwan.net/v1"
+ALLOWED_ORIGINS = "https://diwan-studio.web.app,http://localhost:5199,http://localhost:4173"

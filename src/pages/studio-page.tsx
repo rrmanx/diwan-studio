@@ -1,10 +1,7 @@
-import { PagePlaceholder } from '../components/PagePlaceholder';
+import { useSearchParams } from 'react-router-dom';
+import { StudioWorkbench } from './studio-workbench';
 
 export function StudioPage() {
-  return (
-    <PagePlaceholder
-      title="الاستوديو"
-      intro="ستظهر هنا لوحة التصميم ومعاينة القصيدة قبل تصديرها."
-    />
-  );
+  const [params] = useSearchParams();
+  return <StudioWorkbench quoteId={params.get('quote') ?? undefined} />;
 }

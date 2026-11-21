@@ -13,10 +13,17 @@ import type {
 export type QueryValue = string | number | boolean | null | undefined;
 export type Query = Record<string, QueryValue>;
 
+/** Remaining counts keep their original names; limit/reset are ISO strings for reset. */
 export interface Quota {
   general?: number;
+  generalLimit?: number;
+  generalReset?: string;
   fullTextDaily?: number;
+  fullTextDailyLimit?: number;
+  fullTextDailyReset?: string;
   fullTextMonthly?: number;
+  fullTextMonthlyLimit?: number;
+  fullTextMonthlyReset?: string;
 }
 
 export interface ProviderResponse<T> {

@@ -2,33 +2,32 @@ import { Link } from 'react-router-dom';
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-rule">
-      <div className="container-page grid grid-cols-1 gap-6 py-8 text-sm text-ink-2 sm:grid-cols-3">
-        <p className="font-display text-base text-ink">ستوديو الديوان — شعر يُقرأ ثم يُصمَّم</p>
+    <footer className="mt-12 border-t border-rule pt-5">
+      <div className="flex flex-wrap items-start justify-between gap-6">
+        <div>
+          <p className="font-display text-[15px] text-ink">ستوديو الديوان — شعر يُقرأ ثم يُصمَّم</p>
+          <p className="mt-1 font-ui text-[12px] text-ink-3">نصوص المعاينة من التراث العام.</p>
+        </div>
 
-        <nav aria-label="روابط التذييل" className="flex gap-5">
-          <Link to="/api" className="hover:text-ink">
+        <nav aria-label="روابط التذييل" className="flex gap-5 font-ui text-[12.5px] text-ink-2">
+          <Link to="/api" className="underline-offset-[6px] hover:text-accent hover:underline">
             التكامل
           </Link>
-          <Link to="/about" className="hover:text-ink">
+          <Link to="/about" className="underline-offset-[6px] hover:text-accent hover:underline">
             عن المشروع
           </Link>
+          <a
+            href="https://developers.aldiwan.net"
+            target="_blank"
+            rel="noreferrer"
+            className="underline-offset-[6px] hover:text-accent hover:underline"
+          >
+            الديوان API
+          </a>
         </nav>
-
-        <div className="space-y-1 text-ink-3">
-          <p>
-            <a
-              href="https://developers.aldiwan.net"
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-accent"
-            >
-              البيانات من الديوان API
-            </a>
-          </p>
-          <p>نصوص المعاينة من التراث العام</p>
-        </div>
       </div>
+
+      <p className="mt-5 font-mono text-[10px] text-ink-3">v1.0 · صُنع بواسطة rrmanx</p>
     </footer>
   );
 }

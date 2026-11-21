@@ -16,10 +16,13 @@ export interface PoemSummary {
   display_layout: 'hemistichs' | 'lines' | 'stanzas';
   excerpt: string;
   attribution: Attribution;
+  source: 'demo' | 'live';
+  rights: 'public-domain' | 'api' | 'user';
 }
 
 export interface Poem extends Omit<PoemSummary, 'excerpt'> {
   text: string;
+  verses?: string[][];
 }
 
 export interface Quote {
@@ -29,6 +32,8 @@ export interface Quote {
   topic: string | null;
   author: { id: number | null; name: string };
   attribution: Attribution;
+  source: 'demo' | 'live';
+  rights: 'public-domain' | 'api' | 'user';
 }
 
 export interface Poet {
@@ -61,5 +66,10 @@ export interface PageMeta {
 export interface ApiError {
   code: string;
   message: string;
+  status?: number;
   request_id?: string;
+  limit?: number;
+  used?: number;
+  remaining?: number;
+  reset_at?: string;
 }

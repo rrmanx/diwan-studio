@@ -1,10 +1,8 @@
-import { PagePlaceholder } from '../components/PagePlaceholder';
+import { useParams, useSearchParams } from 'react-router-dom';
+import { StudioWorkbench } from './studio-workbench';
 
 export function StudioPoemPage() {
-  return (
-    <PagePlaceholder
-      title="الاستوديو"
-      intro="ستظهر هنا معاينة تصميم هذه القصيدة وخيارات القياس."
-    />
-  );
+  const { poemId } = useParams();
+  const [params] = useSearchParams();
+  return <StudioWorkbench poemId={poemId} quoteId={params.get('quote') ?? undefined} />;
 }

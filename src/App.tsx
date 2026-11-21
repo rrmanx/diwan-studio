@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { Layout } from './components/Layout';
+import { AppShell } from './components/app-shell';
 import { AboutPage } from './pages/about-page';
 import { ApiPage } from './pages/api-page';
 import { HomePage } from './pages/home-page';
@@ -16,13 +16,14 @@ import { StudioPage } from './pages/studio-page';
 export default function App() {
   return (
     <Routes>
-      <Route element={<Layout />}>
+      <Route element={<AppShell />}>
         <Route index element={<HomePage />} />
         <Route path="search" element={<SearchPage />} />
         <Route path="poets" element={<PoetsPage />} />
         <Route path="poets/:id" element={<PoetPage />} />
         <Route path="poems" element={<PoemsPage />} />
         <Route path="poems/:id" element={<PoemPage />} />
+        <Route path="poem/:id" element={<PoemPage />} />
         <Route path="quotes" element={<QuotesPage />} />
         <Route path="studio" element={<StudioPage />} />
         <Route path="studio/:poemId" element={<StudioPoemPage />} />

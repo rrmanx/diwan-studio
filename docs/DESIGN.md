@@ -15,8 +15,9 @@ horizontal rule, at its right end — the pen landing at the start of a line in 
 right-to-left. One ink, works at 16px, no container.
 Files: `public/brand/mark.svg`, `mark-dark.svg`, `favicon.svg`, `icon-192.png`, `icon-512.png`.
 
-Wordmark: «ديوان» in Reem Kufi, tracked; paired with `STUDIO` in IBM Plex Mono, 11px,
-letter-spacing .28em. In tight spaces only the mark is used.
+Wordmark: «الدِّيوَان» set in Thmanyah Serif Display Medium (outlined), paired with `STUDIO`
+in IBM Plex Mono, 11px, letter-spacing .28em, separated by a 1px rule. In tight spaces only the
+mark is used. The kasra is part of the wordmark — never strip it in the header.
 
 ## 2. Palette (light / default)
 
@@ -41,16 +42,22 @@ used for links-hover, the active tab underline, the primary button and a single 
 
 ## 3. Type
 
+Three families from **Thmanyah** carry the whole interface; Amiri and Aref Ruqaa remain as
+heritage faces inside the Studio's artwork, and IBM Plex Mono is reserved for the API surface.
+
 | Role | Face | Notes |
 |---|---|---|
-| UI | **Readex Pro** 300/400/500 | Arabic + Latin, variable; 16px base, 1.7 leading |
-| Display | **Reem Kufi** 400 | Page titles, wordmark; tight tracking, no bold |
-| Poem | **Amiri** 400/700 | 26–34px, leading 2.05, never letterspaced |
-| Calligraphic | **Aref Ruqaa** 400/700 | Artistic template + pull quotes only |
-| Mono | **IBM Plex Mono** 400/500 | API inspector, endpoint paths, numbers |
+| Display / headings / wordmark | **Thmanyah Serif Display** 400–700 | Page titles, section headings, the wordmark «الدِّيوَان» at 500 |
+| Body / reading | **Thmanyah Serif Text** 300–500 | Paragraphs, poem body in the reader, ledes; 16px, leading 1.85 |
+| UI / digital | **Thmanyah Sans** 300–500 | Nav, buttons, chips, inputs, labels, counters — anything you click |
+| Artwork (Studio) | **Amiri**, **Aref Ruqaa**, Thmanyah Serif Display/Text | Poem faces available inside a composition |
+| Mono | **IBM Plex Mono** 400–500 | API inspector, endpoint paths, numbers |
+
+Five weights per Thmanyah family (300/400/500/700/900). Body copy is 400; UI labels 400–500;
+display headings 500 unless a page needs a single 700 moment.
 
 Scale (rem): 0.75 / 0.875 / 1 / 1.0625 / 1.25 / 1.5 / 1.875 / 2.25 / 3 / 4.25.
-Display uses `clamp()`. Arabic body leading ≥ 1.75. Latin meta labels: 11px, +0.14em, uppercase.
+Display uses `clamp()`. Arabic body leading ≥ 1.8. Latin meta labels: 11px, +0.14em, uppercase.
 
 ## 4. Grid & rhythm
 

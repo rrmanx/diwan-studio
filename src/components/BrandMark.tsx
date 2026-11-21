@@ -1,8 +1,8 @@
-export function BrandMark() {
+export function BrandMark({ size = 24 }: { size?: number }) {
   return (
     <svg
-      width="24"
-      height="24"
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
