@@ -76,17 +76,6 @@ npm run typecheck  # tsc --noEmit
 npm run build      # typecheck + production build
 ```
 
-## Deploy
-
-**Hosting.** Build and deploy the static site to Firebase Hosting (project `rrmanx`, site `diwan-studio`):
-
-```bash
-npm run build
-firebase deploy --only hosting --project rrmanx
-```
-
-`.env.production` is gitignored and must be created locally.
-
 **Proxy.** The Worker lives in [`workers/aldiwan-proxy`](workers/aldiwan-proxy) and is the only server-side piece:
 
 ```bash
