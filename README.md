@@ -9,7 +9,17 @@
 
 Diwan Studio is an independent, Arabic-first studio for reading classical Arabic poetry and turning it into typeset artwork. Discovery, poets, eras, meters, rhymes, quotations and full poems come from the AlDiwan API; the reader honours the API's `display_layout`; and the workbench turns selected verses into a print-ready composition with the source and attribution baked into the image.
 
-**Live:** [diwan-studio.web.app](https://diwan-studio.web.app)
+**Live:** [diwan.rrmanx.com](https://diwan.rrmanx.com) · mirror: [diwan-studio.web.app](https://diwan-studio.web.app)
+
+## What you can do
+
+- Search poems or poets, or filter by era, meter and rhyme.
+- Read a full poem with its hemistichs, diacritics and layout intact.
+- Pick the verses you want, then choose one of three templates.
+- Set the face (Thmanyah, Amiri, Aref Ruqaa), size, leading, palette and frame.
+- Export a 1080×1080, 1080×1350 or 1080×1920 PNG with the poet and source line in the image.
+- Work without an API key: the preview corpus is complete and offline.
+- Open the request panel to see each call's path, status, latency, request id and quota.
 
 ## Screenshots
 
@@ -25,6 +35,12 @@ Diwan Studio is an independent, Arabic-first studio for reading classical Arabic
     <td><em>Integration: the proxy path, endpoint coverage and live quota.</em></td>
   </tr>
 </table>
+
+## The stageshow
+
+[![Stageshow poster: the studio with a night artwork and the export toast](docs/screenshots/preview.png)](https://diwan.rrmanx.com/stageshow/stageshow-dark.mp4)
+
+Twelve seconds of the real product, authored in React and CSS rather than recorded from a screen: pick a poem, switch templates, change the face, export, reset. Watch it at [`/preview`](https://diwan.rrmanx.com/preview), or take the rendered cut: [MP4 720p](https://diwan.rrmanx.com/stageshow/stageshow-dark.mp4) · [MP4 1840×1120](https://diwan.rrmanx.com/stageshow/stageshow-dark-1080.mp4) · [GIF](https://diwan.rrmanx.com/stageshow/stageshow-dark.gif).
 
 ## How it works
 
@@ -81,7 +97,7 @@ npx wrangler secret put ALDIWAN_API_KEY
 npm run deploy
 ```
 
-Set `VITE_DATA_SOURCE=live` and point `VITE_API_BASE` at the deployed Worker.
+Set `VITE_DATA_SOURCE=live` and point `VITE_API_BASE` at the deployed Worker. The Worker allow-lists browser origins: if you serve the site from a new domain, add it to `ALLOWED_ORIGINS` (e.g. `,https://diwan.rrmanx.com`) and deploy a new version, or live calls fall back to the preview corpus.
 
 ## Credits
 
