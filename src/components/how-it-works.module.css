@@ -1,7 +1,6 @@
 /* TASK G — "كيف يعمل": a 12s miniature of the studio, fixed at 920 × 560. */
 
 .root {
-  --hiw-night: #14110D;
   width: min(920px, calc(100vw - 336px));
   margin: 0 0 26px;
 }
@@ -19,6 +18,15 @@
 }
 
 .stage {
+  /* Fixed artwork palette: the artboard never follows the UI theme. */
+  --art-paper: #F4EEE3;
+  --art-ink: #171410;
+  --art-ivory: #FBF7EF;
+  --art-night: #14110D;
+  --art-gold: #A98A3E;
+  --art-accent: #9C3A18;
+  --art-rule: #D9CFBC;
+  --art-ink-3: #6B6255;
   position: absolute;
   top: 0;
   left: 0;
@@ -293,15 +301,15 @@
 }
 
 .groundPaper {
-  background: var(--paper);
+  background: var(--art-paper);
 }
 
 .groundIvory {
-  background: var(--paper-raised);
+  background: var(--art-ivory);
 }
 
 .groundNight {
-  background: var(--hiw-night);
+  background: var(--art-night);
 }
 
 .frameBase,
@@ -313,13 +321,13 @@
 
 .frameBase {
   inset: 0;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--art-rule);
   transition: border-color 380ms cubic-bezier(.2, 0, 0, 1);
 }
 
 .frameInner {
   inset: 9px;
-  border: 1px solid var(--rule);
+  border: 1px solid var(--art-rule);
   opacity: 1;
   transition: opacity 380ms cubic-bezier(.2, 0, 0, 1);
 }
@@ -329,7 +337,7 @@
   right: 64px;
   left: 64px;
   height: 1px;
-  background: var(--gold);
+  background: var(--art-gold);
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 420ms cubic-bezier(.2, 0, 0, 1);
@@ -341,10 +349,11 @@
 }
 
 .artboard[data-template="artistic"] .frameBase {
-  border-color: var(--gold);
+  border-color: var(--art-gold);
 }
 
 .artboard[data-template="artistic"] .goldRule {
+  background: var(--art-accent);
   transform: scaleX(1);
 }
 
@@ -355,7 +364,7 @@
   top: 76px;
   right: 24px;
   left: 24px;
-  color: var(--ink);
+  color: var(--art-ink);
   pointer-events: none;
   opacity: 0;
   transition: opacity 380ms cubic-bezier(.2, 0, 0, 1), color 380ms cubic-bezier(.2, 0, 0, 1);
@@ -366,7 +375,7 @@
 }
 
 .artboard[data-template="artistic"] .verseLayer {
-  color: var(--paper);
+  color: var(--art-paper);
 }
 
 .verseLine {
@@ -405,11 +414,11 @@
 }
 
 .artboard[data-template="editorial"] .accent {
-  color: var(--accent);
+  color: var(--art-accent);
 }
 
 .artboard[data-template="artistic"] .accent {
-  color: var(--gold);
+  color: var(--art-gold);
 }
 
 .poet {
@@ -417,7 +426,7 @@
   top: 246px;
   right: 0;
   left: 0;
-  color: var(--ink-3);
+  color: color-mix(in srgb, var(--art-ink) 58%, var(--art-paper));
   font-size: 12px;
   letter-spacing: 0.14em;
   line-height: 20px;
@@ -440,7 +449,7 @@
 }
 
 .artboard[data-template="artistic"] .poet {
-  color: var(--paper);
+  color: var(--art-gold);
 }
 
 /* ---------- designed cursor ---------- */
