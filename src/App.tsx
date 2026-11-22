@@ -8,6 +8,7 @@ import { PoemPage } from './pages/poem-page';
 import { PoemsPage } from './pages/poems-page';
 import { PoetPage } from './pages/poet-page';
 import { PoetsPage } from './pages/poets-page';
+import { PreviewPage } from './pages/preview-page';
 import { QuotesPage } from './pages/quotes-page';
 import { SearchPage } from './pages/search-page';
 import { StudioPoemPage } from './pages/studio-poem-page';
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="quotes" element={<QuotesPage />} />
         <Route path="studio" element={<StudioPage />} />
         <Route path="studio/:poemId" element={<StudioPoemPage />} />
+        <Route path="preview" element={<PreviewPage />} />
         <Route path="api" element={<ApiPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="*" element={<NotFoundPage />} />

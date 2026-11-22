@@ -1,0 +1,17 @@
+/* The film is authored at 920px; zoom it to the exact content width, then crop
+   its last few pixels so it reads as a full-bleed strip, not a floating card. */
+.frame {
+  width: 100%;
+  container-type: inline-size;
+}
+
+.crop {
+  height: 60cqw;
+  overflow: hidden;
+}
+
+.crop > div {
+  width: 920px !important;
+  margin: 0 !important;
+  zoom: calc(100cqw / 920px);
+}

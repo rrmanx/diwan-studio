@@ -61,6 +61,7 @@ const NAV_GROUPS: { label: string; items: NavItem[] }[] = [
     label: 'الاستوديو',
     items: [
       { to: '/studio', label: 'الاستوديو', hint: '/studio' },
+      { to: '/preview', label: 'معاينة', hint: '/preview' },
       { to: '/studio?panel=designs', label: 'تصاميمي', hint: '?panel=designs' },
     ],
   },
@@ -104,6 +105,7 @@ function routeTitle(pathname: string): string {
   if (pathname.startsWith('/poems/') || pathname.startsWith('/poem/')) return 'القصيدة';
   if (pathname === '/quotes') return 'الاقتباسات';
   if (pathname.startsWith('/studio')) return 'الاستوديو';
+  if (pathname === '/preview') return 'معاينة';
   if (pathname === '/api') return 'التكامل';
   if (pathname === '/about') return 'عن المشروع';
   return 'الديوان';
