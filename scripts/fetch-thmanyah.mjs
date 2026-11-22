@@ -49,11 +49,26 @@ async function main() {
         continue;
       }
       const url = `${CDN}/thmanyah-${family.slug}/woff2/${file}`;
-      const response = await fetch(url);
-      if (!response.ok) {
-        throw new Error(`${response.status} ${response.statusText}: ${url}`);
+      let response;
+      let bytes;
+      try {
+        response = await fetch(url, { signal: AbortSignal.timeout(20_000) });
+        if (response.ok) {
+          bytes = Buffer.from(await response.arrayBuffer());
+        }
+      } catch {
+        console.warn(
+          'Thmanyah fonts were skipped because the CDN could not be reached; the UI will fall back to system fonts.',
+        );
+        return;
       }
-      await writeFile(destination, Buffer.from(await response.arrayBuffer()));
+      if (!response.ok) {
+        console.warn(
+          `Thmanyah fonts were skipped because the CDN could not be reached (${response.status} ${response.statusText}); the UI will fall back to system fonts.`,
+        );
+        return;
+      }
+      await writeFile(destination, bytes);
       downloaded += 1;
     }
   }
